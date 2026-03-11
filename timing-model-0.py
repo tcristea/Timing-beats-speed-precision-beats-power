@@ -284,3 +284,12 @@ if __name__ == "__main__":
     
     # 5. (Optional) Synthetic data robustness test
     # generate_synthetic_paths() and test models
+# Key Points to Extend
+# Data loading: Replace with your actual data source.
+# Feature engineering: Add more indicators (e.g., Bollinger Bands, ATR, momentum).
+# Signal generation: Implement genetic programming with DEAP, or use ML classifiers. The fit method should train the model on a dictionary of features (possibly stacking data across tickers).
+# Backtesting: The provided Backtester is a skeleton; you need to implement realistic order execution (next-day open, slippage, transaction costs). Consider using a library like backtrader or vectorbt for more robust backtesting.
+# Validation metrics: Compute Sharpe ratio, max drawdown, win rate, profit factor, etc.
+# Adaptation: The rolling retrain example retrains a new model on each window. Alternatively, you could update an online model incrementally.
+# Synthetic data: Generate bootstrapped or GARCH paths to test if your strategy’s performance could arise by chance.
+# This scaffolding gives you a structured starting point to build and test your timing model while keeping the code modular and extensible.
